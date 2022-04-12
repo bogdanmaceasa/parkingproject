@@ -13,11 +13,11 @@ import javax.persistence.Table;
 import java.time.ZonedDateTime;
 
 @Entity
-@Table(name = "parking")
+@Table(name = "long_term_parking")
 @Getter
 @Setter
 @ToString
-public class ParkingEntry {
+public class LongTermParkingEntry {
 
     @Id
     @Column(name = "id")
@@ -27,17 +27,20 @@ public class ParkingEntry {
     @Column(name = "parking_spot_number")
     private Integer parkingNo;
 
-    @Column(name = "start_time")
-    private ZonedDateTime startDate;
-
-    // parking fee multiplier by Zone
-    @Column(name = "parking_zone")
-    private Integer parkingZone;
-
     @Column(name = "license_plate")
     private String licensePlateNo;
 
     @Column(name = "duration")
-    private Float duration;
+    private int duration;
+
+    @Column(name = "is_paid")
+    private boolean isPaid;
+
+
+    @Column(name = "payment_code")
+    private String paymentCode;
+
+    @Column(name = "start_date")
+    private ZonedDateTime startDate;
 
 }
